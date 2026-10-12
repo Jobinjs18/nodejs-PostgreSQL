@@ -2,12 +2,15 @@ import express from 'express';
 import dotenv from 'dotenv';
 import { DatabaseConnection } from './src/config/database.js';
 import productRouter from './src/routes/product.route.js';
+import cors from 'cors';
 
 dotenv.config();
 
 const app = express();
 
 app.use(express.json());
+
+app.use(cors());
 
 DatabaseConnection();
 
